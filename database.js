@@ -80,7 +80,7 @@ inserts = [req.query.search];
 
 
 
-  sql = `SELECT A.id AS aid, P.id AS pid, A.name AS aname, P.name AS pname FROM program_author PA INNER JOIN program P ON PA.pid = P.id INNER JOIN author A ON PA.aid = A.id WHERE (P.name LIKE "%"?"%") OR (A.name LIKE "%"?"%")`;
+  sql = `SELECT DISTINCT A.id AS aid, P.id AS pid, A.name AS aname, P.name AS pname FROM program_author PA INNER JOIN program P ON PA.pid = P.id INNER JOIN author A ON PA.aid = A.id WHERE (P.name LIKE "%"?"%") OR (A.name LIKE "%"?"%")`;
       //sql = `SELECT * FROM program_author`;
 inserts = [req.query.search, req.query.search];
 
@@ -91,7 +91,7 @@ inserts = [req.query.search, req.query.search];
     }
     context.program_author = rows; //JSON.stringify(rows);
 
-  sql = `SELECT L.id AS lid, P.id AS pid, L.name AS lname, P.name AS pname FROM program_language PL INNER JOIN program P ON PL.pid = P.id INNER JOIN language L ON PL.lid = L.id WHERE (P.name LIKE "%"?"%") OR (L.name LIKE "%"?"%")`;
+  sql = `SELECT DISTINCT L.id AS lid, P.id AS pid, L.name AS lname, P.name AS pname FROM program_language PL INNER JOIN program P ON PL.pid = P.id INNER JOIN language L ON PL.lid = L.id WHERE (P.name LIKE "%"?"%") OR (L.name LIKE "%"?"%")`;
 inserts = [req.query.search, req.query.search];
 
   mysql.pool.query(sql,inserts, function(err, rows, fields){
@@ -101,7 +101,7 @@ inserts = [req.query.search, req.query.search];
     }
     context.program_language = rows; //JSON.stringify(rows);
 
-  sql = `SELECT O.id AS oid, P.id AS pid, O.name AS oname, P.name AS pname FROM program_os PO INNER JOIN program P ON PO.oid = P.id INNER JOIN os O ON PO.oid = O.id WHERE (P.name LIKE "%"?"%") OR (O.name LIKE "%"?"%")`;
+  sql = `SELECT DISTINCT O.id AS oid, P.id AS pid, O.name AS oname, P.name AS pname FROM program_os PO INNER JOIN program P ON PO.oid = P.id INNER JOIN os O ON PO.oid = O.id WHERE (P.name LIKE "%"?"%") OR (O.name LIKE "%"?"%")`;
 inserts = [req.query.search, req.query.search];
 
   mysql.pool.query(sql,inserts, function(err, rows, fields){
