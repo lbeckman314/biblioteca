@@ -8,7 +8,7 @@
 
 
 {{#if program}}
-<h2>program</h2>
+<h2><a href="/program">program</a></h2>
 <table>
     <tr> 
         <th>name</th> 
@@ -40,7 +40,7 @@
 {{/if}}
 
 {{#if author}}
-<h2>author</h2>
+<h2><a href="author">author</a></h2>
 <table>
     <tr> 
         <th>name</th> 
@@ -68,7 +68,7 @@
 {{/if}}
 
   {{#if language}}
-<h2>language</h2>
+<h2><a href="language">language</a></h2>
 <table>
     <tr> 
         <th>name</th> 
@@ -94,7 +94,7 @@
 {{/if}}
 
 {{#if os}}
-<h2>os</h2>
+<h2><a href="os">os</a></h2>
 <table>
     <tr> 
         <th>name</th> 
@@ -120,7 +120,7 @@
 {{/if}}
 
 {{#if src}}
-<h2>src</h2>
+<h2><a href="src">src</a></h2>
 <table>
     <tr> 
         <th>url</th>
@@ -142,6 +142,95 @@
             </td>
         </tr> 
         {{/each}} 
+</table> 
+{{/if}}
+
+{{#if program_author}}
+<h2><a href="program_author">program_author</a></h2>
+<table>
+  <tr> 
+    <th>program</th> 
+    <th>author</th>
+  </tr> 
+  {{#each program_author}} 
+  <tr> 
+    <td>{{pname}}</td> 
+    <td>{{aname}}</td> 
+    <td>
+    <form action="/edit-program-author" method="get">
+    <input value="Edit" class="buttonEdit" type="submit">
+    <input name="pid" value={{pid}} type="hidden" class="hiddenpid">
+    <input name="aid" value={{aid}} type="hidden" class="hiddenaid">
+    </form>
+    <form action="/delete" method="get">
+    <input value="Delete" class="buttonDelete" type="submit">
+    <input name="pid" value={{pid}} type="hidden" class="hiddenpid">
+    <input name="aid" value={{aid}} type="hidden" class="hiddenaid">
+    <input name="table" value="program_author" class="hidden-table" type="hidden"></form>
+    </form>
+    </td>
+  </tr> 
+  {{/each}} 
+</table> 
+{{/if}}
+
+
+
+{{#if program_language}}
+<h2><a href="program_language">program_language</a></h2>
+<table>
+  <tr> 
+    <th>program</th> 
+    <th>language</th>
+  </tr> 
+  {{#each program_language}} 
+  <tr> 
+    <td>{{pname}}</td> 
+    <td>{{lname}}</td> 
+    <td>
+    <form action="/edit-program-language" method="get">
+    <input value="Edit" class="buttonEdit" type="submit">
+    <input name="pid" value={{pid}} type="hidden" class="hiddenpid">
+    <input name="lid" value={{lid}} type="hidden" class="hiddenlid">
+    </form>
+    <form action="/delete" method="get">
+    <input value="Delete" class="buttonDelete" type="submit">
+    <input name="pid" value={{pid}} type="hidden" class="hiddenpid">
+    <input name="lid" value={{lid}} type="hidden" class="hiddenlid">
+    <input name="table" value="program_language" class="hidden-table" type="hidden"></form>
+    </form>
+    </td>
+  </tr> 
+  {{/each}} 
+</table> 
+{{/if}}
+
+{{#if program_os}}
+<h2><a href="program_os">program_os</a></h2>
+<table>
+  <tr> 
+    <th>program</th> 
+    <th>os</th>
+  </tr> 
+  {{#each program_os}} 
+  <tr> 
+    <td>{{pname}}</td> 
+    <td>{{oname}}</td> 
+    <td>
+    <form action="/edit-program-os" method="get">
+    <input value="Edit" class="buttonEdit" type="submit">
+    <input name="pid" value={{pid}} type="hidden" class="hiddenpid">
+    <input name="oid" value={{oid}} type="hidden" class="hiddenoid">
+    </form>
+    <form action="/delete" method="get">
+    <input value="Delete" class="buttonDelete" type="submit">
+    <input name="pid" value={{pid}} type="hidden" class="hiddenpid">
+    <input name="oid" value={{oid}} type="hidden" class="hiddenoid">
+    <input name="table" value="program_os" class="hidden-table" type="hidden"></form>
+    </form>
+    </td>
+  </tr> 
+  {{/each}} 
 </table> 
 {{/if}}
 
