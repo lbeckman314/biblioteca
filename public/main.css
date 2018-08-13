@@ -136,10 +136,10 @@ body {
   margin: 2%;
   min-height: 90%;
   position: relative;
-  padding-bottom: 8%;}
+  padding-bottom: 10%;}
 
 #content {
-  padding-bottom: 8%;
+  padding-bottom: 10%;
   /* Height of the footer element */ }
 
 #footer {
