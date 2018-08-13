@@ -10,13 +10,12 @@ SET storage_engine=INNODB;
 -- drop tables to update everything
 DROP TABLE IF EXISTS program_language;
 DROP TABLE IF EXISTS program_author;
-DROP TABLE IF EXISTS program_src;
 DROP TABLE IF EXISTS program_os;
-DROP TABLE IF EXISTS program;
-DROP TABLE IF EXISTS language;
 DROP TABLE IF EXISTS author;
-DROP TABLE IF EXISTS src;
+DROP TABLE IF EXISTS language;
 DROP TABLE IF EXISTS os;
+DROP TABLE IF EXISTS src;
+DROP TABLE IF EXISTS program;
 
 -- "main" program table
 CREATE TABLE program(
@@ -122,15 +121,6 @@ INSERT INTO os(name, url) values ("Haiku", "https://www.haiku-os.org/");
 INSERT INTO os(name, url) values ("FreeBSD", "https://www.freebsd.org/");
 INSERT INTO os(name, url) values ("OpenBSD", "https://www.openbsd.org/");
 
--- populate table of sources
--- program 1 is hosted at www.calculatron.org
-INSERT INTO src(url, type, pid) values ("https://www.calculatron.org", "download", 1);
-
--- program 2 is hosted at svn.neato.com
-INSERT INTO src(url, type, pid) values ("https://svn.neato.com", "svn", 2);
-
--- program 3 is hosted at git.coolprogram.com
-INSERT INTO src(url, type, pid) values ("https://git.coolprogram.com", "git", 3);
 
 -- add program 1
 INSERT INTO program(name,purpose,url,version,license) values("Calculatron","calculates pi","https://www.calculatron.org","0.0.1","MIT");
@@ -140,6 +130,16 @@ INSERT INTO program(name,purpose,url,version,license) values("Neato","calculates
 
 -- add program 3
 INSERT INTO program(name,purpose,url,version,license) values("Cool Program","calculates 123","https://coolprogram.com","3.3.3", "GPL");
+
+-- populate table of sources
+-- program 1 is hosted at www.calculatron.org
+INSERT INTO src(url, type, pid) values ("https://www.calculatron.org", "download", 1);
+
+-- program 2 is hosted at svn.neato.com
+INSERT INTO src(url, type, pid) values ("https://svn.neato.com", "svn", 2);
+
+-- program 3 is hosted at git.coolprogram.com
+INSERT INTO src(url, type, pid) values ("https://git.coolprogram.com", "git", 3);
 
 
 -- set entity attributes for program 1

@@ -713,7 +713,7 @@ console.log("update query.oidnew: ", req.query.oidnew);
 
 app.get('/reset-table',function(req,res,next){
   var context = {};
-  sql = "SOURCE program.sql";
+  sql = `SOURCE program.sql`;
     mysql.pool.query(sql, function(err){
     if(err){
       next(err);
