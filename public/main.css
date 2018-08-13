@@ -105,6 +105,15 @@ list-style: none;
 }
 
 
+.title {
+ font-style: italic;
+}
+
+.tech {
+    color: inherit;
+}
+
+
 /***************************************************/
 /* HACK TO HAVE THE FOOTER STAY AT THE BOTTOM
 /***************************************************/
