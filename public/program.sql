@@ -1,7 +1,7 @@
 /*
 liam beckman
-24 july 2018
-Project Step 3 Final Version
+13 august 2018
+Project Step 5: Final Working Project
 */
 
 -- set storage engine
@@ -34,16 +34,16 @@ CREATE TABLE language(
     name varchar(255) NOT NULL,
     url varchar(255),
     PRIMARY KEY(id)
-);
+)ENGINE=InnoDB;
 
 -- foreign key table between program and language
 CREATE TABLE program_language(
     lid int(10) NOT NULL,
     pid int(10) NOT NULL,
-    FOREIGN KEY(pid) REFERENCES program(id), 
-    FOREIGN KEY(lid) REFERENCES language(id),
+    FOREIGN KEY(pid) REFERENCES program(id) ON DELETE CASCADE, 
+    FOREIGN KEY(lid) REFERENCES language(id) ON DELETE CASCADE,
     PRIMARY KEY(pid,lid)
-);
+)ENGINE=InnoDB;
 
 -- the people or organizations that wrote the program
 CREATE TABLE author(
@@ -51,39 +51,39 @@ CREATE TABLE author(
     name varchar(255) NOT NULL,
     url varchar(255),
     PRIMARY KEY(id)
-);
+)ENGINE=InnoDB;
 
 -- foreign key table between program and authors
 CREATE TABLE program_author(
     aid int(10) NOT NULL,
     pid int(10) NOT NULL,
-    FOREIGN KEY(pid) REFERENCES program(id),
-    FOREIGN KEY(aid) REFERENCES author(id),
+    FOREIGN KEY(pid) REFERENCES program(id) ON DELETE CASCADE,
+    FOREIGN KEY(aid) REFERENCES author(id) ON DELETE CASCADE,
     PRIMARY KEY(pid,aid)
-);
+)ENGINE=InnoDB;
 
 CREATE TABLE src(
     id int(10) NOT NULL AUTO_INCREMENT,
     url varchar(255) NOT NULL,
     type varchar(255),
     pid int(10) NOT NULL,
-    FOREIGN KEY(pid) REFERENCES program(id),
+    FOREIGN KEY(pid) REFERENCES program(id) ON DELETE CASCADE,
     PRIMARY KEY(id)
-);
+)ENGINE=InnoDB;
 
 CREATE TABLE os(
     id int(10) NOT NULL AUTO_INCREMENT,
     name varchar(255) NOT NULL,
     url varchar(255),
     PRIMARY KEY(id)
-);
+)ENGINE=InnoDB;
 
 CREATE TABLE program_os(
     oid int(10) NOT NULL,
     pid int(10) NOT NULL,
-    FOREIGN KEY(pid) REFERENCES program(id),
-    FOREIGN KEY(oid) REFERENCES os(id)
-);
+    FOREIGN KEY(pid) REFERENCES program(id) ON DELETE CASCADE,
+    FOREIGN KEY(oid) REFERENCES os(id) ON DELETE CASCADE
+)ENGINE=InnoDB;
 
 
 -- populate table of languages
