@@ -10,7 +10,7 @@ production=/var/www/$project
 cd $production
 ./node_modules/forever/bin/forever stop database.js
 git pull origin master
-./node_modules/forever/bin/forever database.js 8083
+(./node_modules/forever/bin/forever database.js 8083 &)
 
 
 # move compressed files and sha/gpg signatures to packages directory
