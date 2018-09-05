@@ -3,15 +3,14 @@
 project=biblioteca
 pkgs=/var/www/pkgs/$project
 production=/var/www/$project
+main=database.js
+port=8083
 
 # restart production server
-
-#ps -aux | grep --extended-regexp "[8]083" | awk '{print $2}'
+ps -aux | grep --extended-regexp "[${port:0:1}]${port:1}" | awk '{print $2}'
 cd $production
-./node_modules/forever/bin/forever stop database.js
 git pull origin master
-(./node_modules/forever/bin/forever database.js 8083 &)
-
+(node $main $port &)
 
 # move compressed files and sha/gpg signatures to packages directory
 git archive --format=tar -v -o $project.tar.gz HEAD
