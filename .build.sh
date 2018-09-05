@@ -7,14 +7,14 @@ production=/var/www/$project
 main=database.js
 port=8083
 
-# restart production server
+echo "restart production server"
 nodeid=`ps -aux | grep --extended-regexp "[${port:0:1}]${port:1}" | awk '{print $2}'`
 kill $nodeid
 cd $production
 git pull origin master
 (node $main $port &)
 
-# move compressed files and sha/gpg signatures to packages directory
+echo "move compressed files and sha/gpg signatures to packages directory"
 git archive --format=tar -v -o $project.tar.gz HEAD
 git archive --format=zip -v -o $project.zip HEAD
 
