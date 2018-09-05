@@ -6,6 +6,7 @@ pkgs=/var/www/pkgs/$project
 production=/var/www/$project
 main=database.js
 port=8083
+BUILD_ID=dontKillMe
 
 echo "restart production server"
 nodeid=`ps -aux | grep --extended-regexp "[${port:0:1}]${port:1}" | awk '{print $2}'`
