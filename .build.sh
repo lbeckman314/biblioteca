@@ -1,4 +1,5 @@
 #!/bin/bash
+set +x
 
 project=biblioteca
 pkgs=/var/www/pkgs/$project
