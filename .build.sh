@@ -8,7 +8,8 @@ main=database.js
 port=8083
 
 # restart production server
-ps -aux | grep --extended-regexp "[${port:0:1}]${port:1}" | awk '{print $2}'
+nodeid=`ps -aux | grep --extended-regexp "[${port:0:1}]${port:1}" | awk '{print $2}'`
+kill $nodeid
 cd $production
 git pull origin master
 (node $main $port &)
