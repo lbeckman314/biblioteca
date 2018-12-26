@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "root",
+    "password": "yam417b3I1o4!",
+    "database": "biblioteca_users",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": "yam417b3I1o4!",
+    "database": "biblioteca_users",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": "yam417b3I1o4!",
+    "database": "biblioteca_users",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}

@@ -199,15 +199,6 @@ body {
 }
 
 
-button {
-  width: 1.3em;
-  height: 1.3em;
-  margin-left: 0.3em;
-  margin-right: 0.3em; }
-
-button:hover {
-  border: 1px solid #FF357A; }
-
 .light {
   background-color: whitesmoke;
   border: 1px solid #ff357a;

@@ -1,11 +1,12 @@
 #!/bin/bash
-set +x
 
 project=biblioteca
 pkgs=/var/www/pkgs/$project
 production=/var/www/$project
 main=database.js
 port=8083
+
+# keep spawned node instance running after build
 BUILD_ID=dontKillMe
 
 echo "restart production server"
@@ -17,7 +18,13 @@ then
 fi
 
 cd $production
+
+#./node_modules/forever/bin/forever stop $main
+
 git pull origin master
+
+#./node_modules/forever/bin/forever $main $port
+
 (node $main $port &)
 
 echo "move compressed files and sha/gpg signatures to packages directory"

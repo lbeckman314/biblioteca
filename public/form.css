@@ -144,19 +144,25 @@ input {
    margin: 0.4em;
    cursor: pointer;
    border-radius: 2em;
-   width: 25%;
    text-align: center;
 }
 
-input.buttonEdit, input.buttonDelete, input.submit {
+input.buttonEdit, input.buttonDelete, #submit, #login {
     width: 100%;
     background-color: lemonchiffon;
     border: none;
-    padding: 1em 2em;
+    //padding: 1em 2em;
     text-decoration: none;
     margin: 0.4em;
     cursor: pointer;
     border-radius: 2em;
+}
+
+button {
+    width: 1.3em;
+    height: 1.3em;
+    margin-left: 0.3em;
+    margin-right: 0.3em;
 }
 
 input.addsrc, input.addauthor, input.addprogram, input.addos {
@@ -166,13 +172,13 @@ input.addsrc, input.addauthor, input.addprogram, input.addos {
     border: 1px dashed grey;
 }
 
-input.buttonDelete:hover, input.buttonEdit:hover, input.submit:hover {
+input.buttonDelete:hover, input.buttonEdit:hover, #submit:hover, #login:hover{
     background-color: #AD84C7;
     color: white;
     //font-weight: bold;
 }
 
-input.submit {
+#submit {
     width: 40%;
     border: 1px solid lightgrey;
 }

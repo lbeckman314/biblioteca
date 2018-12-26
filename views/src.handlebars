@@ -1,4 +1,4 @@
-<h2>src</h2>
+<h2 id="table">{{table}}</h2>
 <p>⇢ the address that the program may be download at</p>
 <br />
 <br />
@@ -41,7 +41,7 @@
     <td>{{type}}</td> 
     <td>{{name}}</td> 
     <td>
-    <form action="/edit-src" method="get">
+    <form class="edit">
     <input value="Edit" class="buttonEdit" type="submit">
     <input name="id" value={{id}} class="hidden" type="hidden">
     </form>
@@ -52,77 +52,4 @@
   </tr> 
   {{/each}} 
 </table> 
-
-
-
-<script>
-
-
-// wait until the DOM before starting buttons
-document.addEventListener('DOMContentLoaded', bindButtons);
-
-function bindButtons(){
-
-    let buttonsSubmit = document.getElementsByClassName('submit');
-    let buttonHidden = document.getElementById("id");
-
-            console.log("adding ev to submit button");
-    for (let i = 0; i < buttonsSubmit.length; i++) {
-        buttonsSubmit[i].addEventListener('click', function(event){;
-            console.log("adding ev to submit button");
-            var req = new XMLHttpRequest();
-            event.preventDefault();
-
-
-            let userurl = document.getElementById("url").value;
-            let userType = document.getElementById("type").value;
-            let userPid = document.getElementById("pid").value;
-console.log("userPid: ", userPid);
-            //req.open('GET', '/safe-update' + '?table=' + 'src' + '&id=' + buttonHidden.value + '&name=' + userName +"&url=" + userurl, true);
-
-            req.open('GET', '/insert' + '?table=' + 'src' + "&url=" + userurl + "&type=" + userType + "&pid=" + userPid, true);
-            console.log('/insert' + '?table=' + 'src' + "&url=" + userurl + "&type=" + userType + "&pid=" + userPid + "");
-
-            event.preventDefault();
-            req.onload = function() {
-                let res = req.responseText;
-                window.location.href = '/{{table}}';
-            }
-
-            req.send(null);
-
-            
-        });
-    }
-        // hidden row id
-        let buttonsHidden = document.getElementsByClassName("hidden");
-
-        let buttonsDelete = document.getElementsByClassName("buttonDelete");
-
-console.log("length: " , buttonsDelete.length);
-        for (let i = 0; i < buttonsDelete.length; i++) {
-        console.log(buttonsHidden[i]);
-        console.log("abc");
-        buttonsDelete[i].addEventListener('click', function(event){;
-            console.log("adding ev to delete button");
-            event.preventDefault();
-            var req = new XMLHttpRequest();
-
-            console.log("/delete?table={{table}}&id=" + buttonsHidden[i].value);
-            req.open('GET', '/delete?table={{table}}&id=' + buttonsHidden[i].value, true);
-
-            req.onload = function() {
-                let res = req.responseText;
-                location.reload();
-            }
-
-            req.send(null);
-        });
-        };
-}
-            
-</script>
-
-<!--<script src="tabler.js"></script>-->
-
 

@@ -40,7 +40,7 @@ CREATE TABLE language(
 CREATE TABLE program_language(
     lid int(10) NOT NULL,
     pid int(10) NOT NULL,
-    FOREIGN KEY(pid) REFERENCES program(id) ON DELETE CASCADE, 
+    FOREIGN KEY(pid) REFERENCES program(id) ON DELETE CASCADE,
     FOREIGN KEY(lid) REFERENCES language(id) ON DELETE CASCADE,
     PRIMARY KEY(pid,lid)
 )ENGINE=InnoDB;
