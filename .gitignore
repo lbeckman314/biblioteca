@@ -3,3 +3,4 @@ node_modules
 .nfs*
 tags
 dbcon.js
+config.js
