@@ -108,10 +108,7 @@ INSERT INTO language(name, url) values("Rust", "https://www.rust-lang.org/en-US/
 INSERT INTO language(name, url) values("Scheme", "http://schemers.org/");
 
 -- populate table of authors
-INSERT INTO author(name, url) values("The Calculatron Community","https://calculatron.com");
-INSERT INTO author(name) values("Leia O.");
-INSERT INTO author(name) values("Luke S.");
-INSERT INTO author(name) values("Obi-Wan K.");
+INSERT INTO author(name, url) values("Liam Beckman","https://liambeckman.com/");
 
 -- populate table of operating systems
 INSERT INTO os(name, url) values ("Linux", "https://www.kernel.org/");
@@ -135,60 +132,30 @@ INSERT INTO program(name,purpose,url,version) values("wyeast","A multithreaded a
 INSERT INTO program(name,purpose,url,version) values("zigzag","A homegrown TCP chat system built with love.","https://liambeckman.com/code/zigzag/","0.1.0");
 
 -- populate table of sources
--- program 1 is hosted at www.calculatron.org
-INSERT INTO src(url, type, pid) values ("https://www.calculatron.org", "download", 1);
-
--- program 2 is hosted at svn.neato.com
-INSERT INTO src(url, type, pid) values ("https://svn.neato.com", "svn", 2);
-
--- program 3 is hosted at git.coolprogram.com
-INSERT INTO src(url, type, pid) values ("https://git.coolprogram.com", "git", 3);
-
+INSERT INTO src(url, type, pid) values ("https://github.com/lbeckman314/", "git", 1);
+INSERT INTO src(url, type, pid) values ("https://github.com/lbeckman314/", "git", 1);
+INSERT INTO src(url, type, pid) values ("https://github.com/lbeckman314/", "git", 1);
+INSERT INTO src(url, type, pid) values ("https://github.com/lbeckman314/", "git", 1);
+INSERT INTO src(url, type, pid) values ("https://github.com/lbeckman314/", "git", 1);
+INSERT INTO src(url, type, pid) values ("https://github.com/lbeckman314/", "git", 1);
+INSERT INTO src(url, type, pid) values ("https://github.com/lbeckman314/", "git", 1);
+INSERT INTO src(url, type, pid) values ("https://github.com/lbeckman314/", "git", 1);
+INSERT INTO src(url, type, pid) values ("https://github.com/lbeckman314/", "git", 1);
+INSERT INTO src(url, type, pid) values ("https://github.com/lbeckman314/", "git", 1);
+INSERT INTO src(url, type, pid) values ("https://github.com/lbeckman314/", "git", 1);
 
 -- set entity attributes for program 1
 
 -- written in Bash and C
-INSERT INTO program_language(lid,pid) values(1,1);
-INSERT INTO program_language(lid,pid) values(2,1);
+INSERT INTO program_language(lid,pid) values(15,1);
 
--- written by The Calculatron Community
+-- written by liam
 INSERT INTO program_author(aid,pid) values(1,1);
-
 
 -- written for Linux, Windows, and macOS
 INSERT INTO program_os(oid,pid) values(1,1);
 INSERT INTO program_os(oid,pid) values(2,1);
 INSERT INTO program_os(oid,pid) values(3,1);
-
-
-
--- set entity attributes for program 2
-
--- written in C# and C++
-INSERT INTO program_language(lid,pid) values(3,2);
-INSERT INTO program_language(lid,pid) values(4,2);
-
--- written by Leia O. and Luke S.
-INSERT INTO program_author(aid,pid) values(2,2);
-INSERT INTO program_author(aid,pid) values(3,2);
-
-
--- written for Windows
-INSERT INTO program_os(oid,pid) values(1,2);
-
-
-
--- set language and authors for program 3
-
--- written in Haskell
-INSERT INTO program_language(lid,pid) values(6,3);
-
--- written by Obi-Wan K.
-INSERT INTO program_author(aid,pid) values(3,3);
-
--- written for Windows and macOS
-INSERT INTO program_os(oid,pid) values(2,3);
-INSERT INTO program_os(oid,pid) values(3,3);
 
 
 -- display program table
