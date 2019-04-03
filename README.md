@@ -15,6 +15,11 @@ mysql -u biblioteca -p -h localhost biblioteca_main
 source public/program.sql
 ```
 
+```sql
+source public/program.sql
+\q
+```
+
 # To add login capabilities
 
 ```sql
@@ -30,6 +35,9 @@ FLUSH PRIVILEGES;
 # Run server
 
 ```sh
+cp config/config-example.json config/config.json
+# add USERNAME and PASSWORD information
+
 npm install
 node database.js PORT
 ```

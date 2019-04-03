@@ -122,14 +122,17 @@ INSERT INTO os(name, url) values ("FreeBSD", "https://www.freebsd.org/");
 INSERT INTO os(name, url) values ("OpenBSD", "https://www.openbsd.org/");
 
 
--- add program 1
-INSERT INTO program(name,purpose,url,version,license) values("Calculatron","calculates pi","https://www.calculatron.org","0.0.1","MIT");
-
--- add program 2
-INSERT INTO program(name,purpose,url,version,license) values("Neato","calculates infinity","https://neato.com","22.22.22","BSD");
-
--- add program 3
-INSERT INTO program(name,purpose,url,version,license) values("Cool Program","calculates 123","https://coolprogram.com","3.3.3", "GPL");
+INSERT INTO program(name,purpose,url,version) values ("withfeathers","Add a little Emily Dickinson to your day.","https://withfeathers.liambeckman.com/","0.1.0");
+INSERT INTO program(name,purpose,url,version) values ("devilish","The shell from hell!","https://liambeckman.com/code/devilish/","0.1.0");
+INSERT INTO program(name,purpose,url,version) values ("matriz","Multiply, add, transpose, and average matrices like it's going out of style!","https://liambeckman.com/code/matrix/","0.1.0");
+INSERT INTO program(name,purpose,url,version) values ("prime","Output the first million primes!","https://liambeckman.com/code/prime/","0.1.0");
+INSERT INTO program(name,purpose,url,version) values ("palindrome","Determine whether your string is a palindrome!","https://liambeckman.com/code/palindrome/","0.1.0");
+INSERT INTO program(name,purpose,url,version) values ("biblioteca","~ A library for all your code, great and small. ~","https://biblioteca.liambeckman.com/","0.1.0");
+INSERT INTO program(name,purpose,url,version) values ("RemoveMyWaste","An application for household hazardous waste removal.","https://removemywaste.liambeckman.com/","0.1.0");
+INSERT INTO program(name,purpose,url,version) values ("demo","A terminal emulator emulator that allows users to try out programs.","https://liambeckman.com/code/demo/","0.1.0");
+INSERT INTO program(name,purpose,url,version) values ("demonic","Like demo, but more demonic!","https://liambeckman.com/code/demonic/","0.1.0");
+INSERT INTO program(name,purpose,url,version) values("wyeast","A multithreaded adventure game!","https://liambeckman.com/code/wyeast/","0.1.0");
+INSERT INTO program(name,purpose,url,version) values("zigzag","A homegrown TCP chat system built with love.","https://liambeckman.com/code/zigzag/","0.1.0");
 
 -- populate table of sources
 -- program 1 is hosted at www.calculatron.org
